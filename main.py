@@ -1,5 +1,6 @@
 from turtle import *
 speed(100)
+pensize(5)
 list = [0,0,1,
         0,0,0,
         2,0,0]
@@ -8,6 +9,7 @@ def cross(x, y):
     penup()
     goto(x, y)
     # draw cross
+    color('red')
     left(45)
     pendown()
     forward(20)
@@ -25,23 +27,26 @@ def cross(x, y):
     left(45)
     goto(x - 25, y - 25)
     pendown()
+    color('black')
 
 def zero():
+    color('green')
     forward(25)
     penup()
     left(90)
-    forward(5)
+    forward(8)
     right(90)
     pendown()
-    circle(20)
+    circle(17)
     penup()
     right(90)
-    forward(5)
+    forward(8)
     pendown()
     left(90) 
     left(180)
     forward(25)
     left(180)
+    color('black')
 
 def draw_figure(size, count):
     for i in range(count):
@@ -67,22 +72,5 @@ def draw_field(x, y):
             forward(50)
 
 draw_field(-50, 50)
-
-# speed(100)
-# color("red")
-# pensize(5)
-
-# draw_figure(50, 9)
-
-# penup()
-# goto(-100, -100)
-# pendown()
-# forward(50)
-# circle(20)
-# draw_figure(50, 4)
-
-
-
-
 
 exitonclick()
