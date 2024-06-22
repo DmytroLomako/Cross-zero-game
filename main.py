@@ -1,6 +1,7 @@
 from turtle import *
 speed(100)
 pensize(5)
+hideturtle()    
 list = [0,0,0,
         0,0,0,
         0,0,0]
@@ -67,8 +68,9 @@ def draw_field(x, y):
 
 draw_field(0, 0)
 text = Turtle()
+text.hideturtle()
 text.penup()
-text.goto(-20, 100)
+text.goto(-30, 100)
 text.color('red')
 text.write('Черга ходу крестика', font = ("Arial", 16, "bold"))
 
@@ -78,20 +80,65 @@ def check_win():
     win = None
     if list[0] != 0 and list[0] == list[1] and list[0] == list[2]:
         win = list[0]
+        penup()
+        goto(15, 25)
+        pendown()
+        speed(1)
+        forward(120)      
     elif list[3] != 0 and list[3] == list[4] and list[3] == list[5]:
         win = list[3]
+        penup()
+        goto(15, -25)
+        pendown()
+        speed(1)
+        forward(120)    
     elif list[6] != 0 and list[6] == list[7] and list[6] == list[8]:
         win = list[6]
+        penup()
+        goto(15, -75)
+        pendown()
+        speed(1)
+        forward(120) 
     elif list[0] != 0 and list[0] == list[3] and list[0] == list[6]:
         win = list[0]
+        penup()
+        goto(25, 35)
+        pendown()
+        speed(1)
+        right(90)
+        forward(120) 
     elif list[1] != 0 and list[1] == list[4] and list[1] == list[7]:
         win = list[1]
+        penup()
+        goto(75, 35)
+        pendown()
+        speed(1)
+        right(90)
+        forward(120) 
     elif list[2] != 0 and list[2] == list[5] and list[2] == list[8]:
         win = list[2]
+        penup()
+        goto(125, 35)
+        pendown()
+        speed(1)
+        right(90)
+        forward(120) 
     elif list[0] != 0 and list[0] == list[4] and list[0] == list[8]:
         win = list[0]
+        penup()
+        goto(15, 35)
+        pendown()
+        speed(1)
+        right(45)
+        forward(168) 
     elif list[2] != 0 and list[2] == list[4] and list[2] == list[6]:
         win = list[2]
+        penup()
+        goto(135, 35)
+        pendown()
+        speed(1)
+        right(135)
+        forward(168) 
     print(list)
     if win == 1:
         text.clear()
@@ -103,7 +150,7 @@ def check_win():
         text.color('green')
         text.write('Переміг нолик', font = ("Arial", 20, "bold"))
         draw = True
-
+# gi
 def click(x, y):
     global turn, draw
     if draw == False:
